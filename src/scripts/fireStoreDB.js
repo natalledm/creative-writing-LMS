@@ -2,7 +2,15 @@
 import { firestoreDB } from "./connectToFirebase";
 
 // packages
-import { doc, getDoc, collection, getDocs } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  setDoc,
+} from "firebase/firestore";
 
 // Read
 // all documents (genres)
@@ -21,4 +29,26 @@ export async function readDocument(path, id) {
   const document = await getDoc(documentPath);
 
   return document.data();
+}
+
+// Create document with firestore generated id
+
+export async function addDocument(path, data) {
+  const docPath = collection(firestoreDB, path);
+  const newDocument = await addDoc(docPath, data);
+
+  return newDocument.id;
+}
+
+// Create document with its id
+export async function addDocumentWithId(path, data, customId) {
+  const docLocation = collection(firestoreDB, path);
+  await setDoc(doc(docLocation, customId), data);
+}
+
+// Delete document
+
+export async function deleteDocument(path, docId) {
+  const document = doc(firestoreDB, path, docId);
+  await deleteDoc(document);
 }

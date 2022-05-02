@@ -1,22 +1,18 @@
 import * as React from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Login from "./notLoggedPages/Login";
-import Home from "./notLoggedPages/Home";
-import Signup from "./notLoggedPages/Signup";
-import RecoverPassword from "./notLoggedPages/RecoverPassword";
-import Dashboard from "./notLoggedPages/Dashboard";
+import { BrowserRouter } from "react-router-dom";
+import { useUserId } from "./globalState/UserIdContext";
+import LoggedRoutes from "./routes/LoggedRoutes";
+import NotLoggedRoutes from "./routes/NotLoggedRoutes";
 
 export default function App() {
+  // global state
+  const { userId } = useUserId();
+
   return (
     <div>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/recover-password" element={<RecoverPassword />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
+        {userId && <LoggedRoutes />}
+        {!userId && <NotLoggedRoutes />}
       </BrowserRouter>
     </div>
   );

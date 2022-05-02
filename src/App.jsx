@@ -1,13 +1,23 @@
 import * as React from "react";
-// import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Login from "./notLoggedPages/Login";
+import Home from "./notLoggedPages/Home";
+import Signup from "./notLoggedPages/Signup";
+import RecoverPassword from "./notLoggedPages/RecoverPassword";
+import Dashboard from "./notLoggedPages/Dashboard";
 
 export default function App() {
   return (
     <div>
-      <h1>React router</h1>
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/recover-password" element={<RecoverPassword />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

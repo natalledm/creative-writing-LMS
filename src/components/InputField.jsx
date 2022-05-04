@@ -4,7 +4,7 @@ export default function InputField({ fieldInfo, state }) {
 
   return (
     <label htmlFor={inputId} className="input-label">
-      {label}
+      {label}:
       <input
         id={inputId}
         type={type}

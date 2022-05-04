@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserId } from "../state/UserIdContext";
 import { loginUser } from "../scripts/firebaseAuthentication";
+import InputField from "../components/InputField";
+import formInfo from "../data/login-form.json";
 
 export default function Login() {
   // global state
@@ -15,14 +17,21 @@ export default function Login() {
   async function onSubmit(event) {
     event.preventDefault();
 
-    try {
-      const uid = await loginUser(email, password);
-      login(uid);
-      onSuccess();
-    } catch (error) {
-      alert(`Error: Wrong password or email! Error message: ${error}`);
-    }
+    const uid = await loginUser(email, password).catch(onFail);
+
+    if (uid) onSuccess();
+
     resetForm();
+  }
+
+  function onFail(error) {
+    console.error(error);
+    alert(`Error: Wrong password or email! Error message: ${error}`);
+  }
+
+  function onSuccess(uid) {
+    login(uid);
+    navigation("/dashboard");
   }
 
   function resetForm() {
@@ -30,39 +39,22 @@ export default function Login() {
     setPassword("");
   }
 
-  function onSuccess() {
-    navigation("/dashboard");
-  }
-
   return (
     <div>
       <h1>Login to access the courses</h1>
       <form onSubmit={onSubmit}>
-        <label>
-          E-mail:
-          <input
-            type="email"
-            placeholder="Enter e-mail"
-            onChange={(event) => setEmail(event.target.value)}
-            value={email}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            placeholder="Enter password"
-            onChange={(event) => setPassword(event.target.value)}
-            value={password}
-          />
-        </label>
+        <InputField state={[email, setEmail]} fieldInfo={formInfo.email} />
+        <InputField
+          state={[password, setPassword]}
+          fieldInfo={formInfo.password}
+        />
         <button>Login</button>
       </form>
       <p>
         Need an account? <Link to={"/signup"}>Sign up</Link>
       </p>
       <p>
-        Forgot your password?{" "}
+        Forgot your password?
         <Link to={"/recover-password"}>Recover Password</Link>
       </p>
     </div>

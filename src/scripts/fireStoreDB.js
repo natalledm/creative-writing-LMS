@@ -44,6 +44,7 @@ export async function addDocument(path, data) {
 export async function addDocumentWithId(path, data, customId) {
   const docLocation = collection(firestoreDB, path);
   await setDoc(doc(docLocation, customId), data);
+  return true;
 }
 
 // Delete document

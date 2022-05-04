@@ -47,7 +47,7 @@ export default function RecoverPassword() {
       </form>
       <p>
         Did you remembered your password?
-        <Link to="/login">Go back to login</Link>.
+        <Link to="/login">Go back to login</Link>
       </p>
       <p>
         Need an account? <Link to={"/signup"}>Sign up</Link>

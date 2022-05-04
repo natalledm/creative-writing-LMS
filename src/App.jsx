@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { useUserId } from "./globalState/UserIdContext";
+import { useUserId } from "./state/UserIdContext";
 import LoggedRoutes from "./routes/LoggedRoutes";
 import NotLoggedRoutes from "./routes/NotLoggedRoutes";
 

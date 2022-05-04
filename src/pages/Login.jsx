@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useUserId } from "../globalState/UserIdContext";
+import { useUserId } from "../state/UserIdContext";
 import { loginUser } from "../scripts/firebaseAuthentication";
 
 export default function Login() {
@@ -58,9 +58,13 @@ export default function Login() {
         </label>
         <button>Login</button>
       </form>
-      <h3>
+      <p>
         Need an account? <Link to={"/signup"}>Sign up</Link>
-      </h3>
+      </p>
+      <p>
+        Forgot your password?{" "}
+        <Link to={"/recover-password"}>Recover Password</Link>
+      </p>
     </div>
   );
 }

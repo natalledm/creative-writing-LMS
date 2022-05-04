@@ -15,7 +15,9 @@ export function UserIdContext({ children }) {
     }
 
     // There is a user logging in, save user id
+    console.log("logando", userLogginIn);
     setUserId(userLogginIn);
+    console.log("userID", userId);
   };
 
   const logout = () => setUserId(null);

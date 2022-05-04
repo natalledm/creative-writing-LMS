@@ -1,13 +1,19 @@
 import * as React from "react";
-// import { Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { useUserId } from "./state/UserIdContext";
+import LoggedRoutes from "./routes/LoggedRoutes";
+import NotLoggedRoutes from "./routes/NotLoggedRoutes";
 
 export default function App() {
+  // global state
+  const { userId } = useUserId();
+
   return (
     <div>
-      <h1>React router</h1>
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes> */}
+      <BrowserRouter>
+        {userId && <LoggedRoutes />}
+        {!userId && <NotLoggedRoutes />}
+      </BrowserRouter>
     </div>
   );
 }

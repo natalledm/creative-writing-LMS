@@ -1,0 +1,12 @@
+{
+  "email": {
+    "label": "E-mail",
+    "placeholder": "Ex: abba@stckhlm.com",
+    "type": "email"
+  },
+  "password": {
+    "label": "Password",
+    "placeholder": "type your password here",
+    "type": "password"
+  }
+}

@@ -19,7 +19,7 @@ export default function Login() {
 
     const uid = await loginUser(email, password).catch(onFail);
 
-    if (uid) onSuccess();
+    if (uid) onSuccess(uid);
 
     resetForm();
   }

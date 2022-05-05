@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { useUserId } from "./state/UserIdContext";
-import LoggedRoutes from "./routes/LoggedRoutes";
+import LoggedRoutesStudent from "./routes/LoggedRoutesStudent";
 import NotLoggedRoutes from "./routes/NotLoggedRoutes";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div>
       <BrowserRouter>
-        {userId && <LoggedRoutes />}
+        {userId && <LoggedRoutesStudent />}
         {!userId && <NotLoggedRoutes />}
       </BrowserRouter>
     </div>

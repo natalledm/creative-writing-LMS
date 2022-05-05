@@ -1,9 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
-import { useUserId } from "../state/UserIdContext";
 
-export default function LoggedRoutes() {
-  const { login } = useUserId();
+export default function LoggedRoutesStudent() {
   return (
     <div>
       <Routes>

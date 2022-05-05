@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat&family=Zilla+Slab&display=swap");
+
+:root {
+  --orange-hover: #c3593d;
+  --outrageous-orange: #fc7a57;
+  --shadow-blue: #778da9;
+  --seashell-white: #fef5ef;
+  --jet-black: #333333;
+  --main-header-font: "Zilla Slab", serif;
+  --other-headers-font: "Arvo", serif;
+  --text-font: "Montserrat", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: var(--seashell-white);
+}
+
+body {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  min-height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  object-fit: cover;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 4rem;
+  font-family: var(--main-header-font);
+  font-family: serif;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h2,
+h3 {
+  font-family: var(--other-headers-font);
+}
+
+p,
+a,
+label {
+  font-size: 1.6rem;
+}
+
+/* Tags styles */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Main button class */
+
+.main-button {
+  width: 100%;
+  line-height: 44px;
+  border: none;
+  text-decoration: none;
+  font-size: 1.6rem;
+  background-color: var(--outrageous-orange);
+  color: var(--seashell-white);
+  cursor: pointer;
+}
+
+.main-button:hover {
+  background-color: var(--orange-hover);
+  text-decoration: underline;
+}
+
+.cancel-back-button {
+  width: 100%;
+  line-height: 44px;
+  border: none;
+  text-decoration: none;
+  font-size: 1.6rem;
+  background-color: var(--jet-black);
+  color: var(--seashell-white);
+  cursor: pointer;
+}
+
+.cancel-back-button:hover {
+  text-decoration: underline;
+}
+
+/* Desktop typography sizes */
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  p,
+  a,
+  label {
+    font-size: 1.8rem;
+  }
+}

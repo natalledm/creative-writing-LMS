@@ -1,0 +1,39 @@
+.navbar-container {
+  background-color: var(--jet-black);
+  color: var(--seashell-white);
+  max-width: 100%;
+}
+
+.navbar-content {
+  max-width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.logo-title-container {
+  margin-left: 3rem;
+}
+
+.list {
+  display: flex;
+  gap: 2rem;
+  font-family: var(--other-headers-font);
+}
+
+@media (min-width: 600px) {
+  .navbar-content {
+    margin: 0 10%;
+    justify-content: space-around;
+  }
+
+  .list {
+    gap: 8rem;
+  }
+
+  .list a {
+    font-size: 2rem;
+  }
+}

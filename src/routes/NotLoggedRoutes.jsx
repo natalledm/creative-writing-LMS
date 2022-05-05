@@ -4,10 +4,12 @@ import Home from "../pages/Home";
 import Signup from "../pages/Signup";
 import RecoverPassword from "../pages/RecoverPassword";
 import NotLogged from "../pages/NotLogged";
+import NavbarNotLogged from "../components/NavbarNotLogged";
 
 export default function NotLoggedRoutes() {
   return (
     <div>
+      <NavbarNotLogged />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotLogged />} />

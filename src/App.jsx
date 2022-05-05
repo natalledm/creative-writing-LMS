@@ -4,6 +4,7 @@ import { useUserId } from "./state/UserIdContext";
 import LoggedRoutesStudent from "./routes/LoggedRoutesStudent";
 import NotLoggedRoutes from "./routes/NotLoggedRoutes";
 import LoggedRoutesTeacher from "./routes/LoggedRoutesTeacher";
+import "./styles/base.css";
 
 export default function App() {
   // global state

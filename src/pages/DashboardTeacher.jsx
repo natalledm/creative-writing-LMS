@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCollection } from "../scripts/fireStoreDB";
+import "../styles/pages/dashboard-page.css";
 
 export default function DashboardTeacher() {
   const [courses, setCourses] = useState([]);
@@ -13,7 +14,7 @@ export default function DashboardTeacher() {
   }, []);
 
   return (
-    <div>
+    <div className="logged-in-body">
       <h1>Teacher Dashboard</h1>
       <h2>Courses</h2>
       <ul>

@@ -30,6 +30,7 @@ body {
   box-sizing: border-box;
   min-height: 100%;
   margin: 0;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -73,7 +74,7 @@ ol {
   list-style: none;
 }
 
-/* Main button class */
+/* Main button class and secondary button */
 
 .main-button {
   width: 100%;

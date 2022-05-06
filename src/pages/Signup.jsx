@@ -40,7 +40,7 @@ export default function Signup() {
 
   return (
     <div className="not-logged-body signup-container">
-      <h1 className="signup-title">Create an account</h1>
+      <h2 className="signup-title">Create an account</h2>
       <form onSubmit={onSubmit} className="signup-form">
         <InputField
           state={[fullName, setFullName]}

@@ -4,6 +4,9 @@ import InputField from "../components/InputField";
 import { recoverUser } from "../scripts/firebaseAuthentication";
 import formInfo from "../data/recover-password.json";
 
+import "../styles/not-logged-content-layout.css";
+import "../styles/pages/recover-password-page.css";
+
 export default function RecoverPassword() {
   const navigation = useNavigate();
 
@@ -30,27 +33,32 @@ export default function RecoverPassword() {
   }
 
   return (
-    <div>
-      <h1>Recover your password</h1>
+    <div className="not-logged-body recover-container">
+      <h2 className="recover-title">Recover your password</h2>
       <p>
         Please write the email you used to created your account below so we can
         send you an email with instructions on how to reset and create a new
         password.
       </p>
       <p>
-        <span>Attention:</span>
+        <strong>Attention: </strong>
         Don't forget to check your spam folder!
       </p>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="recover-form">
         <InputField state={[email, setEmail]} fieldInfo={formInfo.email} />
-        <button>Submit</button>
+        <button className="main-button">Submit</button>
       </form>
       <p>
         Did you remembered your password?
-        <Link to="/login">Go back to login</Link>
+        <Link to="/login" className="link-recover">
+          Go back to login
+        </Link>
       </p>
       <p>
-        Need an account? <Link to={"/signup"}>Sign up</Link>
+        Need an account?{" "}
+        <Link to={"/signup"} className="link-recover">
+          Sign up
+        </Link>
       </p>
     </div>
   );

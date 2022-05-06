@@ -23,7 +23,7 @@ export default function Home() {
           </p>
           <p>Enroll now for free!</p>
           <span className="main-button" id="home-signup-button">
-            <Link to={"/singup"}>Sign up</Link>
+            <Link to="/signup">Sign up</Link>
           </span>
         </div>
       </section>

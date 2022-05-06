@@ -4,7 +4,7 @@ import { useUserId } from "../state/UserIdContext";
 import { loginUser } from "../scripts/firebaseAuthentication";
 import InputField from "../components/InputField";
 import formInfo from "../data/login-form.json";
-import "../styles/pages/login.css";
+import "../styles/pages/login-page.css";
 import "../styles/not-logged-content-layout.css";
 
 export default function Login() {

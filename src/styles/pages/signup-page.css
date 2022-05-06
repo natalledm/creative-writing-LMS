@@ -1,0 +1,35 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.signup-title {
+  font-family: var(--other-headers-font);
+  margin: 3rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-family: var(--text-font);
+  max-width: 300px;
+}
+
+.signup-form label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-form input {
+  margin-left: 1rem;
+}
+
+.link-login {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-left: 0.6rem;
+  cursor: pointer;
+}

@@ -60,6 +60,7 @@ p,
 a,
 label {
   font-size: 1.6rem;
+  font-family: var(--text-font);
 }
 
 /* Tags styles */
@@ -81,6 +82,7 @@ ol {
   line-height: 44px;
   border: none;
   text-decoration: none;
+  padding: 1rem;
   font-size: 1.6rem;
   font-weight: bold;
   font-family: var(--text-font);
@@ -101,6 +103,7 @@ ol {
   border: none;
   text-decoration: none;
   font-size: 1.6rem;
+  padding: 1rem;
   font-family: var(--text-font);
   font-weight: bold;
   background-color: var(--jet-black);
@@ -126,6 +129,14 @@ ol {
   p,
   a,
   label {
+    font-size: 1.8rem;
+  }
+
+  .main-button {
+    font-size: 1.8rem;
+  }
+
+  .cancel-back-button {
     font-size: 1.8rem;
   }
 }

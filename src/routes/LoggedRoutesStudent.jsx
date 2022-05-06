@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import DashboardStudent from "../pages/DashboardStudent";
 import NavigationLogged from "../components/NavigationLogged";
+import Footer from "../components/Footer";
 
 export default function LoggedRoutesStudent() {
   return (
@@ -9,6 +10,7 @@ export default function LoggedRoutesStudent() {
       <Routes>
         <Route path="/dashboard" element={<DashboardStudent />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

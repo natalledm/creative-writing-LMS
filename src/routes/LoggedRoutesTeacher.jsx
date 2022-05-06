@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import DashboardTeacher from "../pages/DashboardTeacher";
 import NavigationLogged from "../components/NavigationLogged";
+import Footer from "../components/Footer";
 
 export default function LoggedRoutesTeacher() {
   return (
@@ -9,6 +10,7 @@ export default function LoggedRoutesTeacher() {
       <Routes>
         <Route path="/dashboard" element={<DashboardTeacher />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  height: 40px;
+  background-color: var(--shadow-blue);
+  color: var(--seashell-white);
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--text-font);
+}
+
+.footer-paragraph {
+  line-height: 40px;
+}
+
+.love-emphasis {
+  color: var(--outrageous-orange);
+  text-shadow: 1px 1px 1px var(--jet-black);
+}

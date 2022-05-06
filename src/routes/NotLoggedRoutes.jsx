@@ -5,6 +5,7 @@ import Signup from "../pages/Signup";
 import RecoverPassword from "../pages/RecoverPassword";
 import NotLogged from "../pages/NotLogged";
 import NavbarNotLogged from "../components/NavbarNotLogged";
+import Footer from "../components/Footer";
 
 export default function NotLoggedRoutes() {
   return (
@@ -17,6 +18,7 @@ export default function NotLoggedRoutes() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/recover-password" element={<RecoverPassword />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

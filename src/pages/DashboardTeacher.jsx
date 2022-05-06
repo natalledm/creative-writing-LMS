@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCollection } from "../scripts/fireStoreDB";
 import "../styles/pages/dashboard-page.css";
-import "../styles/content-layout.css";
+import "../styles/logged-content-layout.css";
 
 export default function DashboardTeacher() {
   const [courses, setCourses] = useState([]);
@@ -16,8 +16,8 @@ export default function DashboardTeacher() {
 
   return (
     <div className="logged-in-body">
-      <h1>Teacher Dashboard</h1>
-      <h2>Courses</h2>
+      <h2>Teacher Dashboard</h2>
+      <h3>Courses</h3>
       <ul>
         {courses.map((course) => (
           <li key={course.id}>{course.id}</li>

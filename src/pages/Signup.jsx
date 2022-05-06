@@ -6,6 +6,9 @@ import { createUser } from "../scripts/firebaseAuthentication";
 import formInfo from "../data/signup-form.json";
 import InputField from "../components/InputField";
 
+import "../styles/not-logged-content-layout.css";
+import "../styles/pages/signup-page.css";
+
 export default function Signup() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,9 +39,9 @@ export default function Signup() {
   }
 
   return (
-    <div>
-      <h1>Create an account</h1>
-      <form onSubmit={onSubmit}>
+    <div className="not-logged-body signup-container">
+      <h2 className="signup-title">Create an account</h2>
+      <form onSubmit={onSubmit} className="signup-form">
         <InputField
           state={[fullName, setFullName]}
           fieldInfo={formInfo.fullName}
@@ -48,11 +51,14 @@ export default function Signup() {
           state={[password, setPassword]}
           fieldInfo={formInfo.password}
         />
-        <button>Create account</button>
+        <button className="main-button">Create account</button>
       </form>
-      <h3>
-        Already have an account? <Link to={"/login"}>Log in</Link>
-      </h3>
+      <p>
+        Already have an account?{" "}
+        <Link to={"/login"} className="link-login">
+          Log in
+        </Link>
+      </p>
     </div>
   );
 }

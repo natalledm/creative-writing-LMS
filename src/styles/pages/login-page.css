@@ -1,0 +1,39 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.login-title {
+  font-family: var(--other-headers-font);
+  margin: 3rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-family: var(--text-font);
+  max-width: 300px;
+}
+
+.login-form label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-form input {
+  margin-left: 1rem;
+}
+
+.link-footer {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-left: 0.6rem;
+  cursor: pointer;
+}
+
+.link-button-back {
+  padding: 1rem;
+}

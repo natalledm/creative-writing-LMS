@@ -51,6 +51,10 @@ h2 {
   font-size: 3rem;
 }
 
+h3 {
+  font-size: 2rem;
+}
+
 h2,
 h3 {
   font-family: var(--other-headers-font);
@@ -60,6 +64,7 @@ p,
 a,
 label {
   font-size: 1.6rem;
+  font-family: var(--text-font);
 }
 
 /* Tags styles */
@@ -81,7 +86,11 @@ ol {
   line-height: 44px;
   border: none;
   text-decoration: none;
+  padding: 1rem;
   font-size: 1.6rem;
+  font-weight: bold;
+  font-family: var(--text-font);
+  text-shadow: 2px 2px var(--jet-black);
   background-color: var(--outrageous-orange);
   color: var(--seashell-white);
   cursor: pointer;
@@ -98,6 +107,9 @@ ol {
   border: none;
   text-decoration: none;
   font-size: 1.6rem;
+  padding: 1rem;
+  font-family: var(--text-font);
+  font-weight: bold;
   background-color: var(--jet-black);
   color: var(--seashell-white);
   cursor: pointer;
@@ -118,9 +130,21 @@ ol {
     font-size: 5rem;
   }
 
+  h3 {
+    font-size: 3rem;
+  }
+
   p,
   a,
   label {
+    font-size: 1.8rem;
+  }
+
+  .main-button {
+    font-size: 1.8rem;
+  }
+
+  .cancel-back-button {
     font-size: 1.8rem;
   }
 }

@@ -1,0 +1,6 @@
+.not-logged-body {
+  min-height: 60rem;
+  height: calc(95vh - 60px);
+  max-width: 80%;
+  margin: 0 10%;
+}

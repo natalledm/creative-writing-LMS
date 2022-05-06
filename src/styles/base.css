@@ -82,6 +82,9 @@ ol {
   border: none;
   text-decoration: none;
   font-size: 1.6rem;
+  font-weight: bold;
+  font-family: var(--text-font);
+  text-shadow: 2px 2px var(--jet-black);
   background-color: var(--outrageous-orange);
   color: var(--seashell-white);
   cursor: pointer;
@@ -98,6 +101,8 @@ ol {
   border: none;
   text-decoration: none;
   font-size: 1.6rem;
+  font-family: var(--text-font);
+  font-weight: bold;
   background-color: var(--jet-black);
   color: var(--seashell-white);
   cursor: pointer;

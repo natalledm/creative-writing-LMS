@@ -1,6 +1,8 @@
 .logged-in-body {
   width: auto;
   margin-left: 20%;
+  min-height: 60rem;
+  max-width: 80%;
 }
 
 @media (min-width: 600px) {

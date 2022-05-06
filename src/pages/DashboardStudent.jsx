@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCollection } from "../scripts/fireStoreDB";
 import "../styles/pages/dashboard-page.css";
-import "../styles/content-layout.css";
+import "../styles/logged-content-layout.css";
 
 export default function DashboardStudent() {
   const [courses, setCourses] = useState([]);

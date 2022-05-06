@@ -1,0 +1,22 @@
+{
+  "name": {
+    "label": "Name",
+    "placeholder": "Ex: Fiction",
+    "type": "text"
+  },
+  "description": {
+    "label": "Description",
+    "placeholder": "Description here",
+    "type": "text"
+  },
+  "file": {
+    "label": "Files",
+    "placeholder": "File Max size 10mb",
+    "type": "text"
+  },
+  "link": {
+    "label": "Links",
+    "placeholder": "https://example.com",
+    "type": "text"
+  }
+}

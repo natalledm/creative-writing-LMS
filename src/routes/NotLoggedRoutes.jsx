@@ -6,6 +6,7 @@ import RecoverPassword from "../pages/RecoverPassword";
 import NotLogged from "../pages/NotLogged";
 import NavbarNotLogged from "../components/NavbarNotLogged";
 import Footer from "../components/Footer";
+import CreateGenre from "../pages/CreateGenre";
 
 export default function NotLoggedRoutes() {
   return (
@@ -17,6 +18,7 @@ export default function NotLoggedRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/recover-password" element={<RecoverPassword />} />
+        <Route path="/create" element={<CreateGenre />} />
       </Routes>
       <Footer />
     </div>

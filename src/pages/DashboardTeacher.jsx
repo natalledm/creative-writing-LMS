@@ -16,8 +16,8 @@ export default function DashboardTeacher() {
 
   return (
     <div className="logged-in-body">
-      <h1>Teacher Dashboard</h1>
-      <h2>Courses</h2>
+      <h2>Teacher Dashboard</h2>
+      <h3>Courses</h3>
       <ul>
         {courses.map((course) => (
           <li key={course.id}>{course.id}</li>

@@ -22,7 +22,7 @@ export default function Home() {
             are always improving to bring you the best experience.
           </p>
           <p>Enroll now for free!</p>
-          <span className="main-button home-signup-button">
+          <span className="main-button" id="home-signup-button">
             <Link to={"/singup"}>Sign up</Link>
           </span>
         </div>

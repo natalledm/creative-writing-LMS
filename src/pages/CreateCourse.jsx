@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import InputField from "../components/InputField";
-import { addDocument, getCollection } from "../scripts/fireStoreDB";
+import { addDocumentWithId, getCollection } from "../scripts/fireStoreDB";
 import form from "../data/create-course.json";
+import textToUrl from "../scripts/textToUrl";
+import urlToText from "../scripts/urlToText";
 
 export default function CreateCourse() {
   const [courses, setCourses] = useState([]);
 
-  const [name, setName] = useState("");
+  const [id, setId] = useState("");
   const [description, setDescription] = useState("");
 
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -24,13 +26,31 @@ export default function CreateCourse() {
   async function onSubmit(event) {
     event.preventDefault();
 
+    const formattedId = textToUrl(id);
+
+    // check if input already exists in categories
+    const maybeHasCourse = courses.find((course) => {
+      if (course.id === formattedId) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+
+    if (maybeHasCourse !== undefined) {
+      alert("This course already exists!");
+      console.error("This course already exists!");
+      setIsSuccessful(false);
+      resetForm();
+      return;
+    }
+
     const newGenre = {
-      name: name,
       description: description,
     };
 
     try {
-      await addDocument("courses", newGenre);
+      await addDocumentWithId("courses", newGenre, formattedId);
       setIsSuccessful(true);
       setIsRefreshNeeded(true);
     } catch (error) {
@@ -41,7 +61,7 @@ export default function CreateCourse() {
   }
 
   function resetForm() {
-    setName("");
+    setId("");
     setDescription("");
   }
 
@@ -51,14 +71,14 @@ export default function CreateCourse() {
       <h3>Current courses:</h3>
       <ul>
         {courses.map((course) => (
-          <li key={course.id}>{course.name}</li>
+          <li key={course.id}>{urlToText(course.id)}</li>
         ))}
       </ul>
 
       {isSuccessful ? <p>Course created!</p> : null}
 
       <form onSubmit={onSubmit}>
-        <InputField fieldInfo={form.name} state={[name, setName]} />
+        <InputField fieldInfo={form.id} state={[id, setId]} />
         <InputField
           fieldInfo={form.description}
           state={[description, setDescription]}

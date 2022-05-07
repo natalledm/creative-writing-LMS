@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import textToUrl from "../scripts/textToUrl";
+import urlToText from "../scripts/urlToText";
 
 export default function CourseCard({ course }) {
-  const { name } = course;
+  const { id } = course;
 
-  const nameUrl = textToUrl(name);
+  const idToText = urlToText(id);
 
   return (
     <div className="course-item">
-      <Link to={"/courses/" + nameUrl}>
-        <p>{name}</p>
+      <Link to={"/courses/" + id}>
+        <p>{idToText}</p>
       </Link>
     </div>
   );

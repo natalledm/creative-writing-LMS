@@ -1,7 +1,7 @@
 export default function textToUrl(name) {
-  const lowercase = name.toLowerCase();
-  const trim = lowercase.trim();
-  const replace = trim.replace(" ", "-");
+  const removeExtraSpaces = name.trim();
+  const lowercaseAll = removeExtraSpaces.toLowerCase();
+  const newName = lowercaseAll.replaceAll(" ", "-");
 
-  return replace;
+  return newName;
 }

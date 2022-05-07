@@ -1,5 +1,5 @@
 {
-  "name": {
+  "id": {
     "label": "Name",
     "placeholder": "Ex: Fiction",
     "type": "text"

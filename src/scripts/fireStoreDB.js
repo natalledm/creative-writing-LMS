@@ -31,6 +31,16 @@ export async function readDocument(path, id) {
   return document.data();
 }
 
+// // find document through query
+// export async function findDocument(array, key, operator, value) {
+//   const searchTerm = query(array, where(key, operator, value));
+//   const querySnapshot = await getDocs(searchTerm);
+//   querySnapshot.forEach((doc) => {
+//     // doc.data() is never undefined for query doc snapshots
+//     console.log(doc.id, " => ", doc.data());
+//   });
+// }
+
 // Create document with firestore generated id
 
 export async function addDocument(path, data) {

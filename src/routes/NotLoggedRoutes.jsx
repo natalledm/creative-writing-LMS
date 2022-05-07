@@ -8,6 +8,7 @@ import NavbarNotLogged from "../components/NavbarNotLogged";
 import Footer from "../components/Footer";
 import Courses from "../pages/Courses";
 import CreateCourse from "../pages/CreateCourse";
+import CoursePage from "../pages/CoursePage";
 
 export default function NotLoggedRoutes() {
   return (
@@ -21,6 +22,7 @@ export default function NotLoggedRoutes() {
         <Route path="/recover-password" element={<RecoverPassword />} />
         <Route path="/create-course" element={<CreateCourse />} />
         <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:courseId" element={<CoursePage />} />
       </Routes>
       <Footer />
     </div>

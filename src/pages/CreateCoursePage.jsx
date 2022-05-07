@@ -19,6 +19,7 @@ export default function CreateCoursePage() {
     async function loadData(path) {
       const data = await getCollection(path);
       setCourses(data);
+      setIsRefreshNeeded(false);
     }
     loadData("courses");
   }, [isRefreshNeeded]);
@@ -45,12 +46,12 @@ export default function CreateCoursePage() {
       return;
     }
 
-    const newGenre = {
+    const newCourse = {
       description: description,
     };
 
     try {
-      await addDocumentWithId("courses", newGenre, formattedId);
+      await addDocumentWithId("courses", newCourse, formattedId);
       setIsSuccessful(true);
       setIsRefreshNeeded(true);
     } catch (error) {

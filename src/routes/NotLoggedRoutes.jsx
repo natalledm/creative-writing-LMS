@@ -11,6 +11,7 @@ import CreateCoursePage from "../pages/CreateCoursePage";
 import CoursePage from "../pages/CoursePage";
 import EditCoursePage from "../pages/EditCoursePage";
 import DeleteCoursePage from "../pages/DeleteCoursePage";
+import DashboardStudent from "../pages/DashboardStudent";
 
 export default function NotLoggedRoutes() {
   return (
@@ -27,6 +28,7 @@ export default function NotLoggedRoutes() {
         <Route path="/delete-course" element={<DeleteCoursePage />} />
         <Route path="/courses/:courseId" element={<CoursePage />} />
         <Route path="/courses/:courseId/edit" element={<EditCoursePage />} />
+        <Route path="/dashboard" element={<DashboardStudent />} />
       </Routes>
       <Footer />
     </div>

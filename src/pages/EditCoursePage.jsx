@@ -6,8 +6,6 @@ import { uploadFile } from "../scripts/cloudStorage";
 export default function EditCoursePage() {
   const { courseId } = useParams();
 
-  const [course, setCourse] = useState({});
-
   const [description, setDescription] = useState("");
   const [link, setLink] = useState({ link: "" });
   const [file, setFile] = useState({ name: "" });
@@ -18,7 +16,6 @@ export default function EditCoursePage() {
   useEffect(() => {
     async function loadCourse(courseId) {
       const courseDB = await readDocument("courses", courseId);
-      setCourse(courseDB);
       setDescription(courseDB.description);
       setIsRefreshNeeded(false);
     }

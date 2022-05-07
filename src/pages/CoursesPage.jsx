@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getCollection } from "../scripts/fireStoreDB";
 import CourseCard from "../components/CourseCard";
 
-export default function CurrentCourses() {
+export default function CoursesPage() {
   const [courses, setCourses] = useState([]);
 
   // get courses

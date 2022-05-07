@@ -10,6 +10,7 @@ import CoursesPage from "../pages/CoursesPage";
 import CreateCoursePage from "../pages/CreateCoursePage";
 import CoursePage from "../pages/CoursePage";
 import EditCoursePage from "../pages/EditCoursePage";
+import DeleteCoursePage from "../pages/DeleteCoursePage";
 
 export default function NotLoggedRoutes() {
   return (
@@ -21,8 +22,9 @@ export default function NotLoggedRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/recover-password" element={<RecoverPassword />} />
-        <Route path="/create-course" element={<CreateCoursePage />} />
         <Route path="/courses" element={<CoursesPage />} />
+        <Route path="/create-course" element={<CreateCoursePage />} />
+        <Route path="/delete-course" element={<DeleteCoursePage />} />
         <Route path="/courses/:courseId" element={<CoursePage />} />
         <Route path="/courses/:courseId/edit" element={<EditCoursePage />} />
       </Routes>

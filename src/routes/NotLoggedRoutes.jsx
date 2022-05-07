@@ -6,8 +6,8 @@ import RecoverPassword from "../pages/RecoverPassword";
 import NotLogged from "../pages/NotLogged";
 import NavbarNotLogged from "../components/NavbarNotLogged";
 import Footer from "../components/Footer";
-import CreateGenre from "../pages/CreateGenre";
-import CurrentGenres from "../pages/CurrentGenres";
+import Courses from "../pages/Courses";
+import CreateCourse from "../pages/CreateCourse";
 
 export default function NotLoggedRoutes() {
   return (
@@ -19,8 +19,8 @@ export default function NotLoggedRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/recover-password" element={<RecoverPassword />} />
-        <Route path="/create" element={<CreateGenre />} />
-        <Route path="/genres" element={<CurrentGenres />} />
+        <Route path="/create-course" element={<CreateCourse />} />
+        <Route path="/courses" element={<Courses />} />
       </Routes>
       <Footer />
     </div>

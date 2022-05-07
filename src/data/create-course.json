@@ -9,12 +9,17 @@
     "placeholder": "Description here",
     "type": "text"
   },
-  "file": {
+  "keywords": {
     "label": "Files",
     "placeholder": "File Max size 10mb",
     "type": "text"
   },
-  "link": {
+  "files": {
+    "label": "Files",
+    "placeholder": "File Max size 10mb",
+    "type": "text"
+  },
+  "links": {
     "label": "Links",
     "placeholder": "https://example.com",
     "type": "text"

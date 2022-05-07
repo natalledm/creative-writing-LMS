@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import InputField from "../components/InputField";
-import { addDocumentWithId, getCollection } from "../scripts/fireStoreDB";
-import form from "../data/create-genre.json";
+import { addDocument, getCollection } from "../scripts/fireStoreDB";
+import form from "../data/create-course.json";
 
-export default function CreateGenre() {
-  const [genres, setGenres] = useState([]);
+export default function CreateCourse() {
+  const [courses, setCourses] = useState([]);
 
-  const [id, setId] = useState("");
+  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [isRefreshNeeded, setIsRefreshNeeded] = useState(false);
 
-  // get genres/categories
+  // get courses
   useEffect(() => {
     async function loadData(path) {
       const data = await getCollection(path);
-      setGenres(data);
+      setCourses(data);
     }
     loadData("courses");
   }, [isRefreshNeeded]);
@@ -24,29 +24,13 @@ export default function CreateGenre() {
   async function onSubmit(event) {
     event.preventDefault();
 
-    // check if input already exists in categories
-    const maybeHasGenre = genres.find((genre) => {
-      if (genre.id === id.toLowerCase()) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    if (maybeHasGenre !== undefined) {
-      alert("This genre already exists!");
-      console.error("This genre already exists!");
-      setIsSuccessful(false);
-      resetForm();
-      return;
-    }
-
     const newGenre = {
+      name: name,
       description: description,
     };
 
     try {
-      await addDocumentWithId("courses", newGenre, id.toLowerCase());
+      await addDocument("courses", newGenre);
       setIsSuccessful(true);
       setIsRefreshNeeded(true);
     } catch (error) {
@@ -57,24 +41,24 @@ export default function CreateGenre() {
   }
 
   function resetForm() {
-    setId("");
+    setName("");
     setDescription("");
   }
 
   return (
     <div>
-      <h2>Create a new genre</h2>
-      <h3>Current genres:</h3>
+      <h2>Create a new course</h2>
+      <h3>Current courses:</h3>
       <ul>
-        {genres.map((course) => (
-          <li key={course.id}>{course.id}</li>
+        {courses.map((course) => (
+          <li key={course.id}>{course.name}</li>
         ))}
       </ul>
 
-      {isSuccessful ? <p>Genre created!</p> : null}
+      {isSuccessful ? <p>Course created!</p> : null}
 
       <form onSubmit={onSubmit}>
-        <InputField fieldInfo={form.name} state={[id, setId]} />
+        <InputField fieldInfo={form.name} state={[name, setName]} />
         <InputField
           fieldInfo={form.description}
           state={[description, setDescription]}

@@ -5,8 +5,8 @@ import { getDownloadURL, uploadBytes, deleteObject } from "firebase/storage";
 // Project file
 import { cloudStorage } from "./connectToFirebase";
 
-// Methods
-export async function createFile(filePath, file) {
+// Upload file
+export async function uploadFile(filePath, file) {
   const fileReference = ref(cloudStorage, filePath);
 
   await uploadBytes(fileReference, file);

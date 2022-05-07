@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { editDocument, readDocument } from "../scripts/fireStoreDB";
+import { uploadFile } from "../scripts/cloudStorage";
 
 export default function EditCoursePage() {
   const { courseId } = useParams();
@@ -8,6 +9,8 @@ export default function EditCoursePage() {
   const [course, setCourse] = useState({});
 
   const [description, setDescription] = useState("");
+  const [file, setFile] = useState({ name: "" });
+
   const [isRefreshNedded, setIsRefreshNeeded] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
 
@@ -24,9 +27,17 @@ export default function EditCoursePage() {
   async function onSubmit(event) {
     event.preventDefault();
 
+    const fileUrl = await uploadFile(`courses/${courseId}/${file.name}`, file);
+
     const newData = {
       description: description,
       link: "abc",
+      files: [
+        {
+          fileName: file.name,
+          url: fileUrl,
+        },
+      ],
     };
 
     try {
@@ -40,10 +51,24 @@ export default function EditCoursePage() {
     }
   }
 
+  function addFile(file) {
+    const SIZE_LIMIT = 10 * 1024 * 1024;
+    if (file.size > SIZE_LIMIT) {
+      alert("File is bigger than 10mb, please choose a smaller file");
+      return;
+    }
+    setFile(file);
+  }
+
+  function onFileChange(event) {
+    event.preventDefault();
+    addFile(event.target.files[0]);
+  }
+
   return (
     <div>
       <h2>Edit {courseId} course:</h2>
-      {setIsSuccessful ? <p>Course updated!</p> : null}
+      {isSuccessful ? <p>Course updated!</p> : null}
       <form onSubmit={onSubmit}>
         <label>
           Description:
@@ -53,6 +78,7 @@ export default function EditCoursePage() {
             onChange={(event) => setDescription(event.target.value)}
           />
         </label>
+        <input type="file" name={file.name} onChange={onFileChange} />
         <button>Submit</button>
       </form>
     </div>

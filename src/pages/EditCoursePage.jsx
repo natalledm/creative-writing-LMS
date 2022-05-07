@@ -32,12 +32,12 @@ export default function EditCoursePage() {
 
     const newData = {
       description: description,
-      links: [
+      link: [
         {
           linkUrl: link,
         },
       ],
-      files: [
+      file: [
         {
           fileName: file.name,
           url: fileUrl,

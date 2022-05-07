@@ -10,6 +10,7 @@ import {
   addDoc,
   deleteDoc,
   setDoc,
+  updateDoc,
 } from "firebase/firestore";
 
 // Read
@@ -54,6 +55,13 @@ export async function addDocument(path, data) {
 export async function addDocumentWithId(path, data, customId) {
   const docLocation = collection(firestoreDB, path);
   await setDoc(doc(docLocation, customId), data);
+  return true;
+}
+
+// edit document with its id
+export async function editDocument(path, data, docId) {
+  const document = doc(firestoreDB, path, docId);
+  await updateDoc(document, data);
   return true;
 }
 

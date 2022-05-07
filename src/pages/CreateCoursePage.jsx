@@ -5,7 +5,7 @@ import form from "../data/create-course.json";
 import textToUrl from "../scripts/textToUrl";
 import urlToText from "../scripts/urlToText";
 
-export default function CreateCourse() {
+export default function CreateCoursePage() {
   const [courses, setCourses] = useState([]);
 
   const [id, setId] = useState("");

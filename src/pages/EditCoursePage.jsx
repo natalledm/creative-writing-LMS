@@ -9,6 +9,7 @@ export default function EditCoursePage() {
   const [course, setCourse] = useState({});
 
   const [description, setDescription] = useState("");
+  const [link, setLink] = useState({ link: "" });
   const [file, setFile] = useState({ name: "" });
 
   const [isRefreshNedded, setIsRefreshNeeded] = useState(false);
@@ -31,7 +32,11 @@ export default function EditCoursePage() {
 
     const newData = {
       description: description,
-      link: "abc",
+      links: [
+        {
+          linkUrl: link,
+        },
+      ],
       files: [
         {
           fileName: file.name,
@@ -68,7 +73,7 @@ export default function EditCoursePage() {
   return (
     <div>
       <h2>Edit {courseId} course:</h2>
-      {isSuccessful ? <p>Course updated!</p> : null}
+      {isSuccessful ? <h3>Course updated!</h3> : null}
       <form onSubmit={onSubmit}>
         <label>
           Description:
@@ -78,7 +83,17 @@ export default function EditCoursePage() {
             onChange={(event) => setDescription(event.target.value)}
           />
         </label>
-        <input type="file" name={file.name} onChange={onFileChange} />
+        <label>
+          File to upload:
+          <input type="file" name={file.name} onChange={onFileChange} />
+        </label>
+        <label>
+          <input
+            type="text"
+            placeholder="Link to add"
+            onChange={(event) => setLink(event.target.value)}
+          />
+        </label>
         <button>Submit</button>
       </form>
     </div>

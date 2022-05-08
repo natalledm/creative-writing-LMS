@@ -4,6 +4,7 @@ import { addDocumentWithId, getCollection } from "../scripts/fireStoreDB";
 import form from "../data/create-course.json";
 import textToUrl from "../scripts/textToUrl";
 import urlToText from "../scripts/urlToText";
+import "../styles/logged-content-layout.css";
 
 export default function CreateCoursePage() {
   const [courses, setCourses] = useState([]);
@@ -67,7 +68,7 @@ export default function CreateCoursePage() {
   }
 
   return (
-    <div>
+    <div className="logged-in-body">
       <h2>Create a new course</h2>
       <h3>Current courses:</h3>
       <ul>

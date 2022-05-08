@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { editDocument, readDocument } from "../scripts/fireStoreDB";
 import { uploadFile } from "../scripts/cloudStorage";
+import "../styles/logged-content-layout.css";
 
 export default function EditCoursePage() {
   const { courseId } = useParams();
@@ -68,7 +69,7 @@ export default function EditCoursePage() {
   }
 
   return (
-    <div>
+    <div className="logged-in-body">
       <h2>Edit {courseId} course:</h2>
       {isSuccessful ? <h3>Course updated!</h3> : null}
       <form onSubmit={onSubmit}>

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { getCollection } from "../scripts/fireStoreDB";
-import "../styles/pages/dashboard-page.css";
-import "../styles/logged-content-layout.css";
 import CourseCard from "../components/CourseCard";
 import { Link } from "react-router-dom";
+import "../styles/pages/dashboard-page.css";
+import "../styles/logged-content-layout.css";
 
 export default function DashboardTeacher() {
   const [courses, setCourses] = useState([]);
@@ -17,29 +17,34 @@ export default function DashboardTeacher() {
   }, []);
 
   return (
-    <div className="logged-in-body">
-      <h2>Teacher Dashboard</h2>
+    <div className="logged-in-body dashboard-page-content">
+      <h2 className="dashboard-main-title">Teacher Dashboard</h2>
       <div>
-        <h3>Current Courses</h3>
-        <ul>
+        <h3 className="dashboard-secondary-title">Current Courses</h3>
+        <ul className="courses-list teacher-edit-courses-list">
           {courses.map((course) => (
             <li key={course.id}>
               <CourseCard course={course} />
-              <Link to={"/courses/" + course.id + "/edit"}>
-                <p>Edit course</p>
+              <Link
+                to={"/courses/" + course.id + "/edit"}
+                className="main-button"
+              >
+                Edit course
               </Link>
             </li>
           ))}
         </ul>
       </div>
       <div>
-        <h3>Other actions</h3>
-        <Link to={"/create-course"}>
-          <p>Create Course</p>
-        </Link>
-        <Link to={"/delete-course"}>
-          <p>Delete Course</p>
-        </Link>
+        <h3 className="dashboard-secondary-title">Other actions</h3>
+        <div className="teacher-other-actions">
+          <Link to={"/create-course"} className="main-button">
+            Create Course
+          </Link>
+          <Link to={"/delete-course"} className="main-button">
+            Delete Course
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -53,24 +53,33 @@ export default function DashboardStudent() {
   }
 
   return (
-    <div className="logged-in-body">
-      <h2>Student Dashboard</h2>
-      <h3>My Courses</h3>
-      <ul>
-        {enrolledCourses.map((course) => (
-          <CourseCard key={course.id} course={course} />
-        ))}
-      </ul>
-      <h3>Available Courses</h3>
-      <ul>
-        {availableCourses.map((course) => (
-          <div>
+    <div className="logged-in-body dashboard-page-content">
+      <h2 className="dashboard-main-title">Student Dashboard</h2>
+      <div>
+        <h3 className="dashboard-secondary-title">My Courses</h3>
+        <ul className="courses-list">
+          {enrolledCourses.map((course) => (
             <CourseCard key={course.id} course={course} />
-
-            <button onClick={(event) => onEnroll(event, course)}>Enroll</button>
-          </div>
-        ))}
-      </ul>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 className="dashboard-secondary-title">Available Courses</h3>
+        <ul className="courses-list">
+          {availableCourses.map((course) => (
+            <div className="available-courses-list">
+              <CourseCard key={course.id} course={course} />
+              <button
+                onClick={(event) => onEnroll(event, course)}
+                className="main-button"
+                id="enroll-button"
+              >
+                Enroll
+              </button>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

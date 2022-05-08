@@ -1,0 +1,31 @@
+.teacher-edit-courses-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.teacher-edit-courses-list li {
+  width: 200px;
+  height: fit-content;
+  margin: 8px 30px 5px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.create-course-list-item {
+  border: 3px dashed var(--jet-black);
+  font-weight: bold;
+  text-align: center;
+  line-height: 180px;
+  margin: 8px 30px 5px 30px;
+  font-weight: bold;
+}
+
+.teacher-other-actions {
+  display: flex;
+  max-width: 400px;
+  gap: 3rem;
+  margin: 5px 10px 30px 30px;
+  text-align: center;
+}

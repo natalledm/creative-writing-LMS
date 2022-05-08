@@ -28,23 +28,31 @@ export default function NavigationLogged() {
         <Link to={"/courses"}>
           <img src={pen} alt="pen icon, go to courses" title="courses" />
         </Link>
-        <Link to={"/dashboard"}>
+        <a
+          href="https://calendar.google.com/"
+          target={"_blank"}
+          rel="noreferrer"
+        >
           <img
             src={calendar}
             alt="calendar icon, open google calendar"
             title="calendar"
           />
-        </Link>
-        <Link to={"/dashboard"}>
+        </a>
+        <a
+          href="https://hangouts.google.com/"
+          target={"_blank"}
+          rel="noreferrer"
+        >
           <img
             src={hangouts}
             alt="the google hangouts icon, open google hangouts"
             title="Google hangouts"
           />
-        </Link>
-        <Link to={"/dashboard"}>
+        </a>
+        <a href="https://slack.com/" target={"_blank"} rel="noreferrer">
           <img src={slack} alt="the slack icon, go to slack" title="Slack" />
-        </Link>
+        </a>
         <button onClick={logOff} className="button-logoff">
           <img src={logoutIcon} alt="logout icon" title="logout" />
         </button>

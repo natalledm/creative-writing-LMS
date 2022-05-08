@@ -1,0 +1,58 @@
+.edit-course-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-updated-title {
+  color: var(--orange-hover);
+  text-shadow: 0px 1px 1px var(--orange-hover);
+}
+
+.edit-course-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  height: fit-content;
+  margin: 2rem 0;
+}
+
+.edit-course-form label {
+  margin-bottom: 1rem;
+}
+
+.edit-course-form input {
+  margin-left: 0.5rem;
+}
+
+#submit-edit-button {
+  margin: 2rem 1rem;
+  max-width: 200px;
+  line-height: 30px;
+  height: 50px;
+  text-align: center;
+}
+
+.student-enrolled {
+  list-style: inside;
+  width: 300px;
+  margin: 1rem;
+}
+
+.remove-button {
+  border: none;
+  color: var(--seashell-white);
+  background-color: var(--jet-black);
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .edit-course-form {
+    max-width: 600px;
+  }
+}

@@ -1,0 +1,9 @@
+.courses-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem;
+}
+
+.courses-page-title {
+  text-align: center;
+}

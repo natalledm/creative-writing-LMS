@@ -7,6 +7,7 @@ import {
 } from "../scripts/fireStoreDB";
 import { uploadFile } from "../scripts/cloudStorage";
 import "../styles/logged-content-layout.css";
+import "../styles/pages/edit-course-page.css";
 
 export default function EditCoursePage() {
   const { courseId } = useParams();
@@ -96,9 +97,12 @@ export default function EditCoursePage() {
 
   function showEnrolledStudents() {
     const students = enrolledStudents.map((student) => (
-      <li>
+      <li className="student-enrolled">
         {student.fullName}
-        <button onClick={(event) => removeStudent(event, student)}>
+        <button
+          onClick={(event) => removeStudent(event, student)}
+          className="remove-button"
+        >
           Remove
         </button>
       </li>
@@ -108,10 +112,12 @@ export default function EditCoursePage() {
   }
 
   return (
-    <div className="logged-in-body">
+    <div className="logged-in-body edit-course-content">
       <h2>Edit {courseId} course:</h2>
-      {isSuccessful ? <h3>Course updated!</h3> : null}
-      <form onSubmit={onSubmit}>
+      {isSuccessful ? (
+        <h3 className="course-updated-title">Course updated!</h3>
+      ) : null}
+      <form onSubmit={onSubmit} className="edit-course-form">
         <label>
           Description:
           <input
@@ -125,13 +131,16 @@ export default function EditCoursePage() {
           <input type="file" name={file.name} onChange={onFileChange} />
         </label>
         <label>
+          Add a link:
           <input
             type="text"
             placeholder="Link to add"
             onChange={(event) => setLink(event.target.value)}
           />
         </label>
-        <button>Submit</button>
+        <button className="main-button" id="submit-edit-button">
+          Submit
+        </button>
       </form>
       <h3>Students enrolled:</h3>
       {enrolledStudents.length > 0 ? (

@@ -3,6 +3,7 @@ import { getCollection } from "../scripts/fireStoreDB";
 import CourseCard from "../components/CourseCard";
 import { Link } from "react-router-dom";
 import "../styles/pages/dashboard-page.css";
+import "../styles/pages/dashboard-teacher-page.css";
 import "../styles/logged-content-layout.css";
 
 export default function DashboardTeacher() {
@@ -33,16 +34,18 @@ export default function DashboardTeacher() {
               </Link>
             </li>
           ))}
+          <li className="create-course-list-item">
+            <Link to={"/create-course"} className="create-course-link">
+              + Create New Course
+            </Link>
+          </li>
         </ul>
       </div>
       <div>
         <h3 className="dashboard-secondary-title">Other actions</h3>
         <div className="teacher-other-actions">
-          <Link to={"/create-course"} className="main-button">
-            Create Course
-          </Link>
           <Link to={"/delete-course"} className="main-button">
-            Delete Course
+            Delete Course Page
           </Link>
         </div>
       </div>

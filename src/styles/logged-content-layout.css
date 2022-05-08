@@ -3,6 +3,7 @@
   margin-left: 20%;
   min-height: 60rem;
   max-width: 80%;
+  overflow-x: hidden;
 }
 
 @media (min-width: 600px) {

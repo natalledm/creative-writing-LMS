@@ -7,7 +7,7 @@
   "description": {
     "label": "Description",
     "placeholder": "Description here",
-    "type": "text"
+    "type": "textarea"
   },
   "keywords": {
     "label": "Files",
@@ -17,7 +17,7 @@
   "files": {
     "label": "Files",
     "placeholder": "File Max size 10mb",
-    "type": "text"
+    "type": "file"
   },
   "links": {
     "label": "Links",

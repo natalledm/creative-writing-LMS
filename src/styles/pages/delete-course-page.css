@@ -1,0 +1,7 @@
+.delete-course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 200px;
+}

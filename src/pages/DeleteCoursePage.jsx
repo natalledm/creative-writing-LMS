@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCollection, deleteDocument } from "../scripts/fireStoreDB";
+import "../styles/logged-content-layout.css";
 
 export default function DeleteCoursePage() {
   const [courses, setCourses] = useState([]);
@@ -26,7 +27,7 @@ export default function DeleteCoursePage() {
   }
 
   return (
-    <div>
+    <div className="logged-in-body">
       <h2>Choose a course to delete:</h2>
       <ul>
         {courses.map((course) => (

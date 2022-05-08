@@ -8,6 +8,7 @@
 .not-logged-title {
   font-family: var(--other-headers-font);
   margin: 3rem;
+  text-align: center;
 }
 
 .not-logged-buttons a {

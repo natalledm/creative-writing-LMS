@@ -1,0 +1,69 @@
+.dashboard-page-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.dashboard-main-title {
+  text-align: center;
+}
+
+.dashboard-secondary-title {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Teacher dashboard */
+
+.teacher-edit-courses-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.teacher-edit-courses-list li {
+  width: 200px;
+  height: fit-content;
+  margin: 8px 30px 5px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.teacher-other-actions {
+  display: flex;
+  max-width: 400px;
+  gap: 3rem;
+  margin: 5px 10px 30px 30px;
+  text-align: center;
+}
+
+/* Student dashboard */
+
+.available-courses-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#enroll-button {
+  width: 200px;
+}
+
+@media (min-width: 600px) {
+  .dashboard-secondary-title {
+    text-align: start;
+  }
+
+  .courses-list {
+    justify-content: start;
+  }
+}

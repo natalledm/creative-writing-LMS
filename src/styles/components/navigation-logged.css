@@ -17,3 +17,8 @@
   gap: 4rem;
   padding: 6rem 2rem;
 }
+
+.button-logoff {
+  background-color: var(--jet-black);
+  border: none;
+}

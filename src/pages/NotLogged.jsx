@@ -5,7 +5,7 @@ import "../styles/pages/not-logged-page.css";
 export default function NotLogged() {
   return (
     <div className="not-logged-body not-logged-container">
-      <h2 className="not-logged-title">Sorry, you are not logged in :(</h2>
+      <h2 className="not-logged-title">You are logged off :(</h2>
       <p>Please login or create an account to access our courses!</p>
       <div className="not-logged-buttons">
         <Link to="/login" className="main-button">

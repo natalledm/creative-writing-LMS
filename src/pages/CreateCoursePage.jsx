@@ -5,6 +5,7 @@ import form from "../data/create-course.json";
 import textToUrl from "../scripts/textToUrl";
 import urlToText from "../scripts/urlToText";
 import "../styles/logged-content-layout.css";
+import "../styles/pages/create-course.css";
 
 export default function CreateCoursePage() {
   const [courses, setCourses] = useState([]);
@@ -69,24 +70,30 @@ export default function CreateCoursePage() {
 
   return (
     <div className="logged-in-body">
-      <h2>Create a new course</h2>
-      <h3>Current courses:</h3>
-      <ul>
-        {courses.map((course) => (
-          <li key={course.id}>{urlToText(course.id)}</li>
-        ))}
-      </ul>
+      <h2 className="create-course-title">Create a new course</h2>
+      <div className="current-courses">
+        <h3>Current courses:</h3>
+        <ul className="current-courses-list">
+          {courses.map((course) => (
+            <li key={course.id}>{urlToText(course.id)}</li>
+          ))}
+        </ul>
+      </div>
 
-      {isSuccessful ? <p>Course created!</p> : null}
-
-      <form onSubmit={onSubmit}>
-        <InputField fieldInfo={form.id} state={[id, setId]} />
-        <InputField
-          fieldInfo={form.description}
-          state={[description, setDescription]}
-        />
-        <button>Submit</button>
-      </form>
+      {isSuccessful ? (
+        <h3 className="course-created-title">Course created!</h3>
+      ) : null}
+      <div className="create-course-content">
+        <h3>New course:</h3>
+        <form onSubmit={onSubmit} className="create-course-form">
+          <InputField fieldInfo={form.id} state={[id, setId]} />
+          <InputField
+            fieldInfo={form.description}
+            state={[description, setDescription]}
+          />
+          <button className="main-button create-course-button">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }

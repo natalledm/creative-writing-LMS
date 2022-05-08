@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { editDocument, readDocument } from "../scripts/fireStoreDB";
+import {
+  editDocument,
+  readDocument,
+  findStudentsByCourse,
+} from "../scripts/fireStoreDB";
 import { uploadFile } from "../scripts/cloudStorage";
 import "../styles/logged-content-layout.css";
 
@@ -10,14 +14,21 @@ export default function EditCoursePage() {
   const [description, setDescription] = useState("");
   const [link, setLink] = useState({ link: "" });
   const [file, setFile] = useState({ name: "" });
+  const [enrolledStudents, setEnrolledStudents] = useState([]);
 
   const [isRefreshNedded, setIsRefreshNeeded] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
 
   useEffect(() => {
     async function loadCourse(courseId) {
+      // course related data
       const courseDB = await readDocument("courses", courseId);
       setDescription(courseDB.description);
+
+      // students related data
+      const enrolledStudentsDB = await findStudentsByCourse(courseId);
+      setEnrolledStudents(enrolledStudentsDB);
+
       setIsRefreshNeeded(false);
     }
     loadCourse(courseId);
@@ -68,6 +79,34 @@ export default function EditCoursePage() {
     addFile(event.target.files[0]);
   }
 
+  async function removeStudent(event, student) {
+    event.preventDefault();
+    const studentId = student.id;
+    const newFilteredArray = student.courses.filter((course) => {
+      return course !== courseId;
+    });
+
+    const newData = {
+      courses: newFilteredArray,
+    };
+
+    await editDocument("users", newData, studentId);
+    setIsRefreshNeeded(true);
+  }
+
+  function showEnrolledStudents() {
+    const students = enrolledStudents.map((student) => (
+      <li>
+        {student.fullName}
+        <button onClick={(event) => removeStudent(event, student)}>
+          Remove
+        </button>
+      </li>
+    ));
+
+    return <ul>{students}</ul>;
+  }
+
   return (
     <div className="logged-in-body">
       <h2>Edit {courseId} course:</h2>
@@ -94,6 +133,12 @@ export default function EditCoursePage() {
         </label>
         <button>Submit</button>
       </form>
+      <h3>Students enrolled:</h3>
+      {enrolledStudents.length > 0 ? (
+        showEnrolledStudents()
+      ) : (
+        <p>There are no students enrolled in this course</p>
+      )}
     </div>
   );
 }

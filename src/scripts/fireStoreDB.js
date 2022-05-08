@@ -11,6 +11,8 @@ import {
   deleteDoc,
   setDoc,
   updateDoc,
+  where,
+  query,
 } from "firebase/firestore";
 
 // Read
@@ -32,7 +34,7 @@ export async function readDocument(path, id) {
   return document.data();
 }
 
-// // find document through query
+// find document through query
 // export async function findDocument(array, key, operator, value) {
 //   const searchTerm = query(array, where(key, operator, value));
 //   const querySnapshot = await getDocs(searchTerm);
@@ -41,6 +43,18 @@ export async function readDocument(path, id) {
 //     console.log(doc.id, " => ", doc.data());
 //   });
 // }
+
+// find students enrolled in a course
+export async function findStudentsByCourse(courseId) {
+  const studentsCollection = collection(firestoreDB, "users");
+  const searchTerm = where("courses", "array-contains", courseId);
+  const studentQuery = query(studentsCollection, searchTerm);
+  const querySnapshot = await getDocs(studentQuery);
+  const enrolledStudents = querySnapshot.docs.map((doc) => {
+    return { id: doc.id, ...doc.data() };
+  });
+  return enrolledStudents;
+}
 
 // Create document with firestore generated id
 

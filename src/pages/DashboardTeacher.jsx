@@ -23,6 +23,8 @@ export default function DashboardTeacher() {
       <div>
         <h3 className="dashboard-secondary-title">Current Courses</h3>
         <ul className="courses-list teacher-edit-courses-list">
+          {/* This part does not convince me, forget about a second about the nesting */}
+          {/* It would not be cleaner to have this as a separate object, like CourseCardTeacher than builds on top of CourseCard? */}
           {courses.map((course) => (
             <li key={course.id}>
               <CourseCard course={course} />

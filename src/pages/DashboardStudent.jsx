@@ -6,6 +6,7 @@ import { editDocument } from "../scripts/fireStoreDB";
 import "../styles/pages/dashboard-page.css";
 import "../styles/logged-content-layout.css";
 
+// This is too long, the solution is mentioned below by makign the map inside the JSX a separate component
 export default function DashboardStudent() {
   const { userId, userInfo } = useUserId();
 
@@ -66,6 +67,8 @@ export default function DashboardStudent() {
       <div>
         <h3 className="dashboard-secondary-title">Available Courses</h3>
         <ul className="courses-list">
+          {/* Don't use complex logic inside the JSX -1 */}
+          {/* Create a component instead */}
           {availableCourses.map((course) => (
             <div className="available-courses-list">
               <CourseCard key={course.id} course={course} />

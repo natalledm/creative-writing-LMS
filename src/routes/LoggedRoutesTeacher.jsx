@@ -9,6 +9,7 @@ import DeleteCoursePage from "../pages/DeleteCoursePage";
 import EditCoursePage from "../pages/EditCoursePage";
 import NotLogged from "../pages/NotLogged";
 
+// Excellent
 export default function LoggedRoutesTeacher() {
   return (
     <div>

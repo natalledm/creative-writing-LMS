@@ -7,6 +7,7 @@ import urlToText from "../scripts/urlToText";
 import "../styles/logged-content-layout.css";
 import "../styles/pages/create-course.css";
 
+// Component is too long!
 export default function CreateCoursePage() {
   const [courses, setCourses] = useState([]);
 

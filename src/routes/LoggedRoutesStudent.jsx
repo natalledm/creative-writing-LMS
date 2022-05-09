@@ -6,6 +6,7 @@ import CoursesPage from "../pages/CoursesPage";
 import CoursePage from "../pages/CoursePage";
 import NotLogged from "../pages/NotLogged";
 
+// Excellent
 export default function LoggedRoutesStudent() {
   return (
     <div>

@@ -17,6 +17,7 @@ export default function CoursePage() {
     loadData("courses", courseId);
   }, [courseId]);
 
+  // mmm... you have a course.link.map this is an array. Then why I can only add 1 link per course???
   function showLink() {
     const links = course.link.map((link) => {
       return (
@@ -29,6 +30,7 @@ export default function CoursePage() {
     return <ul>{links}</ul>;
   }
 
+  // mmm... you have a course.link.map this is an array. Then why I can only add 1 link per course???
   function showFile() {
     const fileDownload = course.file.map((file) => {
       return (
@@ -49,6 +51,7 @@ export default function CoursePage() {
         <h3>About:</h3>
         <p>{course.description}</p>
         <h3>File and Link:</h3>
+        {/* Nesting -1 */}
         <div className="file-link-list-container">
           {course.file !== undefined ? (
             showFile()
@@ -56,6 +59,7 @@ export default function CoursePage() {
             <p>There is no file yet.</p>
           )}
         </div>
+        {/* Nesting -1 */}
         <div className="file-link-list-container">
           {course.link !== undefined ? (
             showLink()

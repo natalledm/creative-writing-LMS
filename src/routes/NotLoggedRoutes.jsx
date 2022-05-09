@@ -7,6 +7,7 @@ import NotLogged from "../pages/NotLogged";
 import NavbarNotLogged from "../components/NavbarNotLogged";
 import Footer from "../components/Footer";
 
+// good
 export default function NotLoggedRoutes() {
   return (
     <div>

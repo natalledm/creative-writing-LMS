@@ -12,6 +12,7 @@ export default function App() {
 
   return (
     <div>
+      {/* Good, clean approach to handle the 2 user roles */}
       <BrowserRouter>
         {userId && userInfo.role === "student" && <LoggedRoutesStudent />}
         {userId && userInfo.role === "teacher" && <LoggedRoutesTeacher />}

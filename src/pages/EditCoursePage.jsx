@@ -40,6 +40,7 @@ export default function EditCoursePage() {
 
     const fileUrl = await uploadFile(`courses/${courseId}/${file.name}`, file);
 
+    // Here you are limiting yourself to 1 file and 1 link, thats why it looks weird.
     const newData = {
       description: description,
       link: [

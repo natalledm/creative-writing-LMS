@@ -8,8 +8,11 @@ It is a mobile first page, so please check it out first with your mobile or a mo
 You can visit the page [here](https://learning-ms-creative-writing.web.app/) to see the working site. I did more steps of organization, including a Figma design, but I will write a shorter Readme. If you are curious to see or want to talk about it, let me know! :)
 
 To access with a student account (if you don't want to sign up):
+
 email: student@cw.com
+
 password: 12345678
+
 
 ## Tech
 
